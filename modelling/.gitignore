@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Raw data (~500 MB, downloaded by download_data.py); also matches data as a symbolic link
+/data
+*.zip
+
+# Trained models: only the best model (CatBoost) and the files it needs are committed.
+# `python train.py` recreates all three models.
+artifacts/*
+!artifacts/catboost/
+!artifacts/job_buying_power.pkl
+!artifacts/metadata.json
+
+# Large generated outputs (metrics.csv, feature importances and logs are small and can be committed)
+results/test_predictions/
+results/predictions_*.csv
+runs/
+
+# Library scratch output
+catboost_info/
+.DS_Store

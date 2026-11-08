@@ -1,0 +1,190 @@
+{
+  "updated": "2026-11-08T04:37:06",
+  "best_model": "catboost",
+  "best_model_rule": "highest validation PR-AUC",
+  "models": {
+    "catboost": {
+      "trained": "2026-11-08T04:37:06",
+      "seed": 42,
+      "rounds": 260,
+      "train_secs": 296,
+      "val": {
+        "pr_auc": 0.9777172520735724,
+        "auc_roc": 0.9992999997895813,
+        "precision": 0.9663551401869159,
+        "recall": 0.912621359223301,
+        "f1": 0.9387199273717658,
+        "accuracy": 0.9993059197334732,
+        "flagged": 1070.0
+      },
+      "test": {
+        "pr_auc": 0.9486747167087427,
+        "auc_roc": 0.9981635841376364,
+        "precision": 0.9514713474445018,
+        "recall": 0.8592074592074592,
+        "f1": 0.9029887310142087,
+        "accuracy": 0.9992874096440827,
+        "flagged": 1937.0,
+        "threshold": 0.36325069056497084
+      }
+    },
+    "xgboost": {
+      "trained": "2026-11-08T04:37:06",
+      "seed": 42,
+      "rounds": 565,
+      "train_secs": 162,
+      "val": {
+        "pr_auc": 0.9769787297278728,
+        "auc_roc": 0.9995326743986821,
+        "precision": 0.9726415094339622,
+        "recall": 0.909973521624007,
+        "f1": 0.9402644778841769,
+        "accuracy": 0.9993264850747036,
+        "flagged": 1060.0
+      },
+      "test": {
+        "pr_auc": 0.9512124839558551,
+        "auc_roc": 0.9984970358709009,
+        "precision": 0.9569779643231899,
+        "recall": 0.8503496503496504,
+        "f1": 0.900518390520859,
+        "accuracy": 0.9992748133499124,
+        "flagged": 1906.0,
+        "threshold": 0.2906864583492279
+      }
+    },
+    "lightgbm": {
+      "trained": "2026-11-08T04:37:06",
+      "seed": 42,
+      "rounds": 570,
+      "train_secs": 35,
+      "val": {
+        "pr_auc": 0.9764337467299922,
+        "auc_roc": 0.9994324448447501,
+        "precision": 0.9522522522522523,
+        "recall": 0.9329214474845543,
+        "f1": 0.9424877396344182,
+        "accuracy": 0.9993367677453188,
+        "flagged": 1110.0
+      },
+      "test": {
+        "pr_auc": 0.9488473827511951,
+        "auc_roc": 0.9982342661764022,
+        "precision": 0.9219056974459725,
+        "recall": 0.875058275058275,
+        "f1": 0.8978713226500837,
+        "accuracy": 0.9992316260556144,
+        "flagged": 2036.0,
+        "threshold": 0.09183373521540605
+      }
+    }
+  },
+  "split": {
+    "fit": {
+      "rows": 1102173,
+      "fraud": 6373,
+      "fraud_rate": 0.00578,
+      "fraud_cards": 644,
+      "start": "2019-01-01 00:00:18",
+      "end": "2020-04-03 17:53:52"
+    },
+    "val": {
+      "rows": 194502,
+      "fraud": 1133,
+      "fraud_rate": 0.00583,
+      "fraud_cards": 120,
+      "start": "2020-04-03 17:54:44",
+      "end": "2020-06-21 12:13:37"
+    },
+    "test": {
+      "rows": 555719,
+      "fraud": 2145,
+      "fraud_rate": 0.00386,
+      "fraud_cards": 218,
+      "start": "2020-06-21 12:14:25",
+      "end": "2020-12-31 23:59:34"
+    }
+  },
+  "numeric_features": [
+    "amt",
+    "city_pop",
+    "lat",
+    "long",
+    "merch_lat",
+    "merch_long",
+    "hour",
+    "dow",
+    "month",
+    "age",
+    "dist_um_km",
+    "u_amt_cnt_3",
+    "u_amt_mean_3",
+    "u_amt_cnt_7",
+    "u_amt_mean_7",
+    "u_amt_cnt_30",
+    "u_amt_mean_30",
+    "u_amt_cnt_all",
+    "u_amt_mean_all",
+    "acct_age_days",
+    "amt_vs_u30",
+    "amt_vs_uall",
+    "um_cnt_3",
+    "um_cnt_7",
+    "um_cnt_30",
+    "um_cnt_all",
+    "m_amt_cnt_30",
+    "m_amt_mean_30",
+    "m_amt_cnt_all",
+    "m_amt_mean_all",
+    "m_amt_std_all",
+    "amt_vs_m_all",
+    "amt_z_m",
+    "cat_amt_mean_all",
+    "amt_vs_cat",
+    "job_bp_model",
+    "job_bp_stat",
+    "amt_vs_job_bp",
+    "sim_mean_7",
+    "sim_max_7",
+    "sim_mean_30",
+    "sim_max_30",
+    "mdist_z",
+    "cdist_z",
+    "mloc_dev_km",
+    "ms_pair_n",
+    "uloc_dist_3",
+    "uloc_dist_7",
+    "uloc_dist_30",
+    "trav_km_mean_7",
+    "trav_km_mean_30",
+    "trav_km_mean_90",
+    "trav_long_frac_7",
+    "trav_long_frac_30",
+    "trav_long_frac_90",
+    "trav_cnt_7",
+    "trav_cnt_30",
+    "trav_cnt_90",
+    "since_last_s",
+    "log_since_last",
+    "speed_kmh",
+    "since_last_merch_s",
+    "hop_km"
+  ],
+  "categorical_features": [
+    "merchant",
+    "category",
+    "gender",
+    "state",
+    "job",
+    "city"
+  ],
+  "versions": {
+    "python": "3.11.14",
+    "pandas": "3.1.1",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.1",
+    "catboost": "1.2.10",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.7.0"
+  }
+}

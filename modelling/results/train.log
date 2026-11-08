@@ -1,0 +1,60 @@
+04:27:20  loaded 1,852,394 transactions from data (11s)
+04:27:21    feature step done: base
+04:27:23    feature step done: user_history
+04:27:25    feature step done: user_merchant_history
+04:27:30    feature step done: merchant_profiles
+04:28:17    feature step done: merchant_similarity
+04:28:29    feature step done: merchant_location
+04:28:37    feature step done: location_travel_recency
+04:28:39  features ready: 63 numeric + 6 categorical (79s)
+04:28:39    fit  1,102,173 rows | 6,373 fraud (0.58%) on 644 cards | 2019-01-01 00:00:18 -> 2020-04-03 17:53:52
+04:28:39    val    194,502 rows | 1,133 fraud (0.58%) on 120 cards | 2020-04-03 17:54:44 -> 2020-06-21 12:13:37
+04:28:40    test   555,719 rows | 2,145 fraud (0.39%) on 218 cards | 2020-06-21 12:14:25 -> 2020-12-31 23:59:34
+04:28:40  training catboost (seed 42)
+04:28:46      round    1 | val PR-AUC 0.47352 | best 0.47352 @ 1 | 6s
+04:29:29      round   50 | val PR-AUC 0.96195 | best 0.96195 @ 50 | 48s
+04:30:14      round  100 | val PR-AUC 0.97072 | best 0.97074 @ 96 | 93s
+04:30:58      round  150 | val PR-AUC 0.97359 | best 0.97366 @ 148 | 138s
+04:31:44      round  200 | val PR-AUC 0.97632 | best 0.97632 @ 200 | 183s
+04:32:30      round  250 | val PR-AUC 0.97748 | best 0.97748 @ 250 | 229s
+04:33:25      round  300 | val PR-AUC 0.97746 | best 0.97772 @ 260 | 284s
+04:33:40    catboost: val PR-AUC 0.9777 | test PR-AUC 0.9487 | test precision 0.951 recall 0.859 F1 0.903 @ threshold 0.363 | 260 rounds | 296s
+04:33:42  training xgboost (seed 42)
+04:33:56      round    1 | val PR-AUC 0.84673 | best 0.84673 @ 1 | 6s
+04:34:09      round   50 | val PR-AUC 0.96676 | best 0.96676 @ 50 | 19s
+04:34:22      round  100 | val PR-AUC 0.97039 | best 0.97039 @ 100 | 32s
+04:34:36      round  150 | val PR-AUC 0.97157 | best 0.97169 @ 142 | 46s
+04:34:53      round  200 | val PR-AUC 0.97303 | best 0.97303 @ 200 | 63s
+04:35:09      round  250 | val PR-AUC 0.97404 | best 0.97405 @ 246 | 79s
+04:35:28      round  300 | val PR-AUC 0.97499 | best 0.97501 @ 299 | 98s
+04:35:45      round  350 | val PR-AUC 0.97567 | best 0.97567 @ 350 | 115s
+04:36:01      round  400 | val PR-AUC 0.97615 | best 0.97621 @ 386 | 131s
+04:36:13      round  450 | val PR-AUC 0.97636 | best 0.97641 @ 432 | 143s
+04:36:16      round  500 | val PR-AUC 0.97662 | best 0.97665 @ 487 | 147s
+04:36:20      round  550 | val PR-AUC 0.97686 | best 0.97686 @ 550 | 150s
+04:36:24      round  600 | val PR-AUC 0.97692 | best 0.97698 @ 565 | 154s
+04:36:26    xgboost: val PR-AUC 0.9770 | test PR-AUC 0.9512 | test precision 0.957 recall 0.850 F1 0.901 @ threshold 0.291 | 565 rounds | 162s
+04:36:26  training lightgbm (seed 42)
+04:36:29      round    1 | val PR-AUC 0.77739 | best 0.77739 @ 1 | 2s
+04:36:32      round   50 | val PR-AUC 0.96487 | best 0.96487 @ 50 | 4s
+04:36:34      round  100 | val PR-AUC 0.96824 | best 0.96853 @ 90 | 7s
+04:36:37      round  150 | val PR-AUC 0.97030 | best 0.97030 @ 150 | 9s
+04:36:40      round  200 | val PR-AUC 0.97192 | best 0.97192 @ 200 | 12s
+04:36:43      round  250 | val PR-AUC 0.97310 | best 0.97310 @ 250 | 15s
+04:36:45      round  300 | val PR-AUC 0.97440 | best 0.97440 @ 300 | 18s
+04:36:48      round  350 | val PR-AUC 0.97513 | best 0.97518 @ 343 | 20s
+04:36:51      round  400 | val PR-AUC 0.97580 | best 0.97581 @ 393 | 23s
+04:36:53      round  450 | val PR-AUC 0.97601 | best 0.97601 @ 450 | 26s
+04:36:56      round  500 | val PR-AUC 0.97615 | best 0.97615 @ 500 | 28s
+04:36:58      round  550 | val PR-AUC 0.97614 | best 0.97623 @ 540 | 31s
+04:37:01      round  600 | val PR-AUC 0.97635 | best 0.97643 @ 570 | 33s
+04:37:05    lightgbm: val PR-AUC 0.9764 | test PR-AUC 0.9488 | test precision 0.922 recall 0.875 F1 0.898 @ threshold 0.092 | 570 rounds | 35s
+04:37:06  
+          val_pr_auc  test_pr_auc  test_auc_roc  test_precision  test_recall  test_f1  test_threshold  rounds
+model                                                                                                        
+catboost      0.9777       0.9487        0.9982          0.9515       0.8592   0.9030          0.3633     260
+xgboost       0.9770       0.9512        0.9985          0.9570       0.8503   0.9005          0.2907     565
+lightgbm      0.9764       0.9488        0.9982          0.9219       0.8751   0.8979          0.0918     570
+
+04:37:06  best model (highest validation PR-AUC): catboost
+04:37:06  saved models to artifacts/, metrics to results/metrics.csv
